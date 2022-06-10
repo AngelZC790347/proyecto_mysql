@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "descripcion": "recibido"
+    },
+    {
+        "id": 1,
+        "descripcion": "en camino"
+    },
+    {
+        "id": 2,
+        "descripcion": "recibido"
+    },
+    {
+        "id": 4,
+        "descripcion": "cancelado"
+    }
+]

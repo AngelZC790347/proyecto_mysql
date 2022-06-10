@@ -1,0 +1,6 @@
+namespace models{
+    class ProductoPlatillos
+    {
+        
+    }
+}
