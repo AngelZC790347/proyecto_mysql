@@ -1,14 +1,12 @@
-using System.Data;
-using System.Linq;
+u
 namespace services
 {
     class ProductoPlatillosService:IPorductosPlatillosServices
     {
         protected async Task<List<ProductoPlatillos>> IPorductosPlatillosServices.obtenerPlatillos()
         {
-            using (SqlConnection  connection = new ()){
+            const String query = "select * from producto_platillos";
 
-            }
         }
     }
 }
