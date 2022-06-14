@@ -5,7 +5,7 @@ namespace proyecto_final
     {
         public static void Main(){
             RepartidorController repartidor = new RepartidorController();
-            repartidor.obtenerRepartidores();
+            repartidor.registrarAsistencia();
         }
     }
 }

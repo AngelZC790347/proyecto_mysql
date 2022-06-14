@@ -1,1 +1,18 @@
-models.Repartidor
+[
+    {
+        "nombre": "Luis Felipe",
+        "apellido": "Canales"
+    },
+    {
+        "nombre": "xiomara alexandra",
+        "apellido": "more"
+    },
+    {
+        "nombre": "gilmar ronny",
+        "apellido": "oviedo"
+    },
+    {
+        "nombre": "angel gabriel",
+        "apellido": "zu\u00F1iga"
+    }
+]
