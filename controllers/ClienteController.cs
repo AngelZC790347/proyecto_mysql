@@ -1,0 +1,7 @@
+namespace controllers
+{
+    class ClienteController
+    {
+        
+    }
+}

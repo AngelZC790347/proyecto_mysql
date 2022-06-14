@@ -1,6 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H 
 
+#include "conn.h"
+#include "utilities/errors.h"
+#include "utilities/cadena_funciones.h"
+
+
 #ifndef SERVER
 #define SERVER "localhost"
 #endif

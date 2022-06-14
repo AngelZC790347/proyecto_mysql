@@ -1,12 +1,11 @@
-u
 namespace services
 {
-    class ProductoPlatillosService:IPorductosPlatillosServices
+    class ProductoPlatillosService:RestApiConectorService,IPorductoPlatillosServices
     {
-        protected async Task<List<ProductoPlatillos>> IPorductosPlatillosServices.obtenerPlatillos()
-        {
-            const String query = "select * from producto_platillos";
-
+        public ProductoPlatillosService():base("producto_platillos"){}
+        public String obtenerEntidadPorId(long id)
+        {            
+            return  this.dispatchQuery($"select * from {this.table_name} where id = {id}");
         }
     }
 }
