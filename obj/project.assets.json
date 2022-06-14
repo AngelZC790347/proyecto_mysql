@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/angelcano/.nuget/packages/": {}
+    "/Users/angelzuniga/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj",
+      "projectUniqueName": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj",
       "projectName": "proyecto_final",
-      "projectPath": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj",
-      "packagesPath": "/Users/angelcano/.nuget/packages/",
-      "outputPath": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/obj/",
+      "projectPath": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj",
+      "packagesPath": "/Users/angelzuniga/.nuget/packages/",
+      "outputPath": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/angelcano/.nuget/NuGet/NuGet.Config"
+        "/Users/angelzuniga/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

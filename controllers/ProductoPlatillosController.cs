@@ -4,7 +4,7 @@ namespace  controllers
 {
     class ProductoPlatillosController:ProductoPlatillosService
     {
-        private ProductoPlatillos platillo;
+        
 
     }
 }

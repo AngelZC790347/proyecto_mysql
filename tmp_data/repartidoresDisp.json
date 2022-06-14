@@ -1,18 +1,1 @@
-[
-    {
-        "nombre": "Luis Felipe",
-        "apellido": "Canales"
-    },
-    {
-        "nombre": "xiomara alexandra",
-        "apellido": "more"
-    },
-    {
-        "nombre": "gilmar ronny",
-        "apellido": "oviedo"
-    },
-    {
-        "nombre": "angel gabriel",
-        "apellido": "zu\u00F1iga"
-    }
-]
+[{"dni":76608992,"nombre":"Luis Felipe","apellido":"Canales"},{"dni":76608996,"nombre":"xiomara alexandra","apellido":"more"},{"dni":76608997,"nombre":"gilmar ronny","apellido":"oviedo"},{"dni":76608998,"nombre":"angel gabriel","apellido":"zu\u00F1iga"},{"dni":7665613,"nombre":"Piero Joel","apellido":"Valenzuela Chirinos"}]

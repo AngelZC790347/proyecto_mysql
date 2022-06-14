@@ -5,31 +5,53 @@ namespace controllers
 {
     class RepartidorController
     {
-        Repartidor repartidorHandler;
         static string path = "tmp_data/repartidoresDisp.json";
-        public void registrarAsistenciaRepartidor(Repartidor r1){ 
-            insertValueToFile(JsonSerializer.Serialize(r1));
+        public List<Repartidor> repartidoresDisp;
+        public RepartidorController(){
+            this.repartidoresDisp=obtenerRepartidoresDelServicio();
+            registrarAsistencia(this.repartidoresDisp);
         }
-        static private void insertValueToFile(string value){
-            using(StreamWriter sw = File.AppendText(path)){sw.Write(value);}
+        public void registrarRepartidor(Repartidor r1){
+            actualizarRepartidoresDisponibles();
+            this.repartidoresDisp.Add(r1);
+            registrarAsistencia(this.repartidoresDisp);
         }
-        public void registrarAsistencia(){
-            var repartidoresStr=new RepartidoresService().getAllInformation().Split('\n').ToArray();
-            using(StreamWriter sw = File.AppendText(path)){sw.Write('[');}
-            for (int i = 0; i < repartidoresStr.Length-1; i++)
+        public Repartidor agignarRepartidor(){
+            actualizarRepartidoresDisponibles();
+            Repartidor repartidorAsginado = this.repartidoresDisp[this.repartidoresDisp.Count-1];
+            this.repartidoresDisp.Remove(repartidorAsginado);
+            registrarAsistencia(this.repartidoresDisp);
+            return repartidorAsginado;
+        }
+        private List<Repartidor>obtenerRepartidoresDisponibles(){
+            JsonDocument jdoc =JsonDocument.Parse(File.ReadAllText(path));
+            List<Repartidor> r = new List<Repartidor>();
+            r.AddRange((List<Repartidor>)jdoc.Deserialize(r.GetType()));
+            return r;
+        }
+        private void actualizarRepartidoresDisponibles(){
+            this.repartidoresDisp = obtenerRepartidoresDisponibles();
+        }
+        static void registrarAsistencia(List<Repartidor> repartidoresAsistentes){
+            using (Utf8JsonWriter writer = new Utf8JsonWriter(File.CreateText(path).BaseStream))
             {
-                if (i!=0)
-                {
-                   insertValueToFile(",");
-                }
-                registrarAsistenciaRepartidor(obtenerRepartidor(repartidoresStr[i]));
+                writer.WriteRawValue(JsonSerializer.Serialize(repartidoresAsistentes));
             }
-            insertValueToFile("]");
         }
-        public Repartidor obtenerRepartidor(string texto){
-            var arr = texto.Split(' ').ToArray();
-            System.Console.WriteLine(uint.Parse(arr[0]));
-            return new Repartidor(uint.Parse(arr[0]),arr[1]+" "+arr[2],arr[3]);
+        private List<Repartidor> obtenerRepartidoresDelServicio(){
+            List <String> repartidoresStr = new RepartidoresService().getAllInformation().Split("\n").ToList();
+            List<Repartidor>repartidores = new List<Repartidor>();
+            for (int i = 0; i <repartidoresStr.Count-1; i++)
+            {
+                repartidores.Add(parseStringToRepartidor(repartidoresStr[i]));
+            }
+            System.Console.WriteLine(repartidores.Count);
+            return repartidores;
+        }
+        //Parsea una cadena en un entidad repartidor
+        private Repartidor parseStringToRepartidor(string texto){
+             var arr = texto.Split(' ').ToArray();
+             return new Repartidor(uint.Parse(arr[0]),arr[1]+" "+arr[2],arr[3]);
         }
     }
 }

@@ -1,7 +1,7 @@
 namespace generics{
     class Persona
     {
-        protected uint dni{get;}
+        public uint dni{get;}
         public String nombre{get;}
         public String apellido{get;}
 
