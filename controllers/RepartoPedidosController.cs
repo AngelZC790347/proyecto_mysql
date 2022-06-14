@@ -13,7 +13,7 @@ namespace controllers
         public DetallePedidosController ? pedido;
         public Repartidor repartidorAsignado;
         public Cliente cliente;
-        public   String direccionCliente;
+        public String direccionCliente;
         public ESTADOS_REPARTO estaoPedido;
 
         public RepartoPedidosController(Cliente cliente,DetallePedidosController pedido,string direccionCliente){
@@ -21,6 +21,7 @@ namespace controllers
             this.pedido = pedido;
             this.direccionCliente = direccionCliente;
             this.estaoPedido = ESTADOS_REPARTO.RECIBIDO;
+            this.repartidorAsignado=new RepartidorController().agignarRepartidor();
         }
         
     }

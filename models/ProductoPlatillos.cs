@@ -1,10 +1,10 @@
 namespace models{
     class ProductoPlatillos
     {
-        private ushort id;
-        private String nombre;
-        private float costo;
-        ProductoPlatillos(ushort id,String nombre , float costo){
+        public ushort id;
+        public String nombre;
+        public float costo;
+        public ProductoPlatillos(ushort id,String nombre , float costo){
             this.id = id;
             this.nombre = nombre;
             this.costo = costo;
@@ -17,6 +17,9 @@ namespace models{
         }
         public float getCosto(){
             return costo;
+        }
+        public string detallar(){
+            return $"{nombre}....................................{costo}\n";
         }        
     }
 }

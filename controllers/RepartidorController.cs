@@ -8,8 +8,14 @@ namespace controllers
         static string path = "tmp_data/repartidoresDisp.json";
         public List<Repartidor> repartidoresDisp;
         public RepartidorController(){
-            this.repartidoresDisp=obtenerRepartidoresDelServicio();
-            registrarAsistencia(this.repartidoresDisp);
+            if (!File.Exists(path))
+            {
+                this.obtenerRepartidoresDelServicio();
+                registrarAsistencia(this.repartidoresDisp);
+            }else{
+                actualizarRepartidoresDisponibles();
+            }           
+            
         }
         public void registrarRepartidor(Repartidor r1){
             actualizarRepartidoresDisponibles();
