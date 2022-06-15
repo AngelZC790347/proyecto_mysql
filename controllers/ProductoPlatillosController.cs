@@ -21,7 +21,7 @@ namespace  controllers
         }
         static private ProductoPlatillos parseStringToProductoPlatillos(string texto){
             var arr = texto.Split(' ').ToArray();
-            return new ProductoPlatillos(ushort.Parse(arr[0]),arr[1],float.Parse(arr[2]));
+            return new ProductoPlatillos(ushort.Parse(arr[0]),arr[1],float.Parse(arr[arr.Count()-2]));
         }
     }
 }

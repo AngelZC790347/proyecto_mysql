@@ -4,6 +4,7 @@ namespace controllers
 {
     class ClienteController:Cliente
     {
+        RepartoPedidosController info_delivery;
         private DetallePedidosController pedidosHandler;
         public ClienteController(uint dni,String nombre,String apellido):base(dni,nombre,apellido){
             this.pedidosHandler = new DetallePedidosController();
@@ -17,10 +18,13 @@ namespace controllers
             return menu;
         }
 
-        public void confirmarPedido(){
+        public void confirmarPedido(string direccion){
             this.pedidosHandler.dumpInfoToaService();
+            this.info_delivery  = new RepartoPedidosController(this,this.pedidosHandler,direccion);
         }
-    
+        public void cancelarPedido(){
+            this.info_delivery.enviarPedido();
+        }
         public int solicitarEstadoDelPedido(){
             string response = new RepartoPedidosService().obtenerEntidadPorId(pedidosHandler.id);
             if (response == "" || response == " "|| response ==null)

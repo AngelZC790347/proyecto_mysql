@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj": {}
+    "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj": {}
   },
   "projects": {
-    "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj": {
+    "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj",
+        "projectUniqueName": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj",
         "projectName": "proyecto_final",
-        "projectPath": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/proyecto_final.csproj",
-        "packagesPath": "/Users/angelzuniga/.nuget/packages/",
-        "outputPath": "/Users/angelzuniga/Documents/programacion/programasCS/proyecto_final/obj/",
+        "projectPath": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/proyecto_final.csproj",
+        "packagesPath": "/Users/angelcano/.nuget/packages/",
+        "outputPath": "/Users/angelcano/Documents/Sublime/clang_files/proyecto_mysql/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/angelzuniga/.nuget/NuGet/NuGet.Config"
+          "/Users/angelcano/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

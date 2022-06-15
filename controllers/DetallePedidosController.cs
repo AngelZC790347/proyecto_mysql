@@ -6,7 +6,7 @@ namespace controllers{
     {
         public ulong id{get;}
         
-        private List<Pedido> pedidos;
+        public List<Pedido> pedidos;
 
         public DetallePedidosController(){
             this.id = (ulong)HashCode.Combine(TimeOnly.FromDateTime(DateTime.Now));
@@ -23,6 +23,7 @@ namespace controllers{
             }else{
                 pedidoToMatch.cantidad = nuevoPedido.cantidad;
             }
+            System.Console.WriteLine(pedidos[pedidos.Count-1].producto.nombre);
         }
         public void quitarPedido(ushort id){
             Pedido pedidoToDelete = this.pedidos.Find((p)=>p.producto.id==id)??throw new Exception("No se encontro pedido para elminar verifique el codigo");
