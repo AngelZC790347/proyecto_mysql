@@ -5,10 +5,18 @@ namespace proyecto_final
     class Program
     {
         public static void Main(){
-            RepartidorController repartidor = new RepartidorController();
+            try
+            {
+                ClienteController cliente = new ClienteController(78312331,"test@name","test@lastname"); 
+                System.Console.WriteLine( cliente.solicitarMenu());
+                System.Console.WriteLine(cliente.solicitarEstadoDelPedido());    
+            }
+            catch (System.Exception e)
+            {
+                Console.Error.Write(e.Message);
+                Environment.Exit(1);
+            }
             
-            Repartidor repartidor2 = new Repartidor(7665613,"Piero Joel","Valenzuela Chirinos");
-            repartidor.registrarRepartidor(repartidor2);
         }
     }
 }

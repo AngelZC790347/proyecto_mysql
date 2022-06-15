@@ -6,11 +6,10 @@ namespace  controllers
     {
         public void registrarPlatilloNuevoAlServicio(){
             throw new NotImplementedException();
-        }
-        public void eliminarPlatilloPorIdlServicio(){
-            throw new NotImplementedException();
         } 
-
+        public ProductoPlatillos obtenerProductoDelId(ushort id){
+            return parseStringToProductoPlatillos(new ProductoPlatillosService().obtenerEntidadPorId(id));
+        }    
         static public List <ProductoPlatillos> obtenerMenu(){
             List<string>platilosStr=new ProductoPlatillosService().getAllInformation().Split('\n').ToList();
             List<ProductoPlatillos> productoPlatillos= new List<ProductoPlatillos>(); 
