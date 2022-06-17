@@ -3,16 +3,19 @@ namespace services
 {
     class RestApiConectorService:IRestApiConector
     {
-        protected readonly String table_name;
+        public readonly String table_name;
         protected Process process;
         static string conectorPath = "conections/build/rest_api"; 
         private StreamReader ?response;
-        protected RestApiConectorService(string table_name){
+        public RestApiConectorService(string table_name){
             this.table_name = table_name;
             process = new Process(); 
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.FileName = conectorPath;
+        }
+        ~RestApiConectorService(){
+            this.process.Close();
         }
         public int contarRegistros()
         {
@@ -28,15 +31,15 @@ namespace services
             throw new NotImplementedException();
         }
         private int ejecutarConsulta(string query){
-            this.process.StartInfo.Arguments = query;
+            this.process.StartInfo.Arguments = $"\"{query}\"";
             this.process.Start();
             this.response = this.process.StandardOutput;
-            this.process.WaitForExit();
+            this.process.WaitForExit(); 
             return this.process.ExitCode;              
         }
-        protected string dispatchQuery(string  query){
-            if (ejecutarConsulta(query) == 1)
-            {
+        public string dispatchQuery(string  query){
+            if (ejecutarConsulta(query)== 1)
+            {   
                 throw new Exception(this.response.ReadToEnd());
             }
             return this.response.ReadToEnd(); 

@@ -7,7 +7,7 @@ namespace services
         public void insertarRegistroPedido(ulong id, string infoJsonFormat)
         {
             System.Console.WriteLine(infoJsonFormat);
-            this.dispatchQuery($"insert into {this.table_name} (id , information) values ({id},JSON_ARRAY({infoJsonFormat}))");
+            this.dispatchQuery($"insert into {this.table_name} (id , informacion) values ({id},'{infoJsonFormat}')");
         }
 
         public string obtenerEntidadPorId(ulong id)

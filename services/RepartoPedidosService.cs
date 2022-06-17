@@ -11,10 +11,10 @@ namespace services
             string tmpresponse = this.obtenerEntidadPorId(id_pedido);
             if (tmpresponse == " " || tmpresponse == "" || tmpresponse ==null)
             {
-                this.dispatchQuery($"insert into {this.table_name} (id_pedido,id_repartidor,id_cliente,direccion,estado) values ({id_pedido},{id_repartidor},{id_cliente},{direccion},{estado})");    
+                this.dispatchQuery($"insert into {this.table_name} (id_pedido,id_repartidor,id_cliente,direccion,estado) values ({id_pedido},{id_repartidor},{id_cliente},'{direccion}',{estado})");    
             }else
             {
-                this.dispatchQuery($"update {this.table_name} set id_repartidor = {id_repartidor},direccion = {direccion},estado = {estado})");    
+                this.dispatchQuery($"update {this.table_name} set direccion = '{direccion}' , estado = {estado} where id_pedido = {id_pedido}");    
             }
 
         }

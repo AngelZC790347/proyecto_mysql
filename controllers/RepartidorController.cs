@@ -29,7 +29,7 @@ namespace controllers
        
         public Repartidor agignarRepartidor(){
             actualizarRepartidoresDisponibles();
-            Repartidor repartidorAsginado = this.repartidoresDisp[this.repartidoresDisp.Count-1];
+            Repartidor repartidorAsginado = this.repartidoresDisp[new Random().Next(0,this.repartidoresDisp.Count-1)];
             this.repartidoresDisp.Remove(repartidorAsginado);
             registrarAsistencia(this.repartidoresDisp);
             return repartidorAsginado;
@@ -52,7 +52,9 @@ namespace controllers
                 writer.WriteRawValue(JsonSerializer.Serialize(repartidoresAsistentes));
             }
         }
-       
+        ~RepartidorController(){
+            File.Delete(path);
+        }
         static private List<Repartidor> obtenerRepartidoresDelServicio(){
             List <String> repartidoresStr = new RepartidoresService().getAllInformation().Split("\n").ToList();
             List<Repartidor>repartidores = new List<Repartidor>();
@@ -60,7 +62,7 @@ namespace controllers
             {
                 repartidores.Add(parseStringToRepartidor(repartidoresStr[i]));
             }
-            System.Console.WriteLine(repartidores.Count);
+            //System.Console.WriteLine(repartidores.Count);
             return repartidores;
         }
        

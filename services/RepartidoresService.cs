@@ -1,11 +1,7 @@
 namespace services
 {
-    class RepartidoresService : RestApiConectorService,IEntidadesUnicasService
+    class RepartidoresService : PersonaService,IEntidadesUnicasService
     {
         public RepartidoresService() : base("repartidores"){}
-        public string obtenerEntidadPorId(ulong id)
-        {
-            return this.dispatchQuery($"select * from ${this.table_name} where dni == ${id}");
-        }
     }
 }
