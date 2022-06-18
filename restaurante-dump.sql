@@ -158,7 +158,7 @@ CREATE TABLE `repartidores` (
 
 LOCK TABLES `repartidores` WRITE;
 /*!40000 ALTER TABLE `repartidores` DISABLE KEYS */;
-INSERT INTO `repartidores` VALUES (76608992,'Luis Felipe','Canales'),(76608996,'xiomara alexandra','more'),(76608997,'gilmar ronny','oviedo'),(76608998,'angel gabriel','zuñiga cano');
+INSERT INTO `repartidores` VALUES (76608992,'luis Felipe','Canales alvarado'),(76608996,'dahayra xiomara','more ayay'),(76608997,'gilmar ronny','oviedo chahua'),(76608998,'angel gabriel','zuñiga cano');
 /*!40000 ALTER TABLE `repartidores` ENABLE KEYS */;
 UNLOCK TABLES;
 
