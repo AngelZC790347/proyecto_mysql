@@ -29231,3 +29231,73 @@ SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_ped
 select * from clientes where dni = 76608998 select * from clientes where dni = 76608998 43
 update clientes set nombre = '',apellido = '' where dni = 76608998 update clientes set nombre = '',apellido = '' where dni = 76608998 66
 select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_pedidos WHERE true 47
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from clientes where dni = 76608998 select * from clientes where dni = 76608998 43
+update clientes set nombre = 'Angel',apellido = 'Zuñiga' where dni = 76608998 update clientes set nombre = 'Angel',apellido = 'Zuñiga' where dni = 76608998 78
+select * from producto_platillos where id = 1 select * from producto_platillos where id = 1 45
+select * from producto_platillos where id = 1 select * from producto_platillos where id = 1 45
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+insert into detalle_pedidos (id , informacion) values (18446744071894625637,'[{"producto":{"id":1,"nombre":"pollo","costo":20},"cantidad":3},{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":1}]') insert into detalle_pedidos (id , informacion) values (18446744071894625637,'[{"producto":{"id":1,"nombre":"pollo","costo":20},"cantidad":3},{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":1}]') 214
+select estado from reparto_pedidos where id_pedido = 18446744071894625637 select estado from reparto_pedidos where id_pedido = 18446744071894625637 73
+insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (18446744071894625637,76608996,76608998,'fsdgg',0) insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (18446744071894625637,76608996,76608998,'fsdgg',0) 139
+select estado from reparto_pedidos where id_pedido = 18446744071894625637 select estado from reparto_pedidos where id_pedido = 18446744071894625637 73
+select estado from reparto_pedidos where id_pedido = 18446744071894625637 select estado from reparto_pedidos where id_pedido = 18446744071894625637 73
+update reparto_pedidos set direccion = 'fsdgg' , estado = 1 where id_pedido = 18446744071894625637 update reparto_pedidos set direccion = 'fsdgg' , estado = 1 where id_pedido = 18446744071894625637 98
+insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (18446744071894625637,76608998,18446744071971234635,72.6) insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (18446744071894625637,76608998,18446744071971234635,72.6) 124
+select estado from reparto_pedidos where id_pedido = 18446744071894625637 select estado from reparto_pedidos where id_pedido = 18446744071894625637 73
+select estado from reparto_pedidos where id_pedido = 18446744071894625637 select estado from reparto_pedidos where id_pedido = 18446744071894625637 73
+update reparto_pedidos set direccion = 'fsdgg' , estado = 3 where id_pedido = 18446744071894625637 update reparto_pedidos set direccion = 'fsdgg' , estado = 3 where id_pedido = 18446744071894625637 98
+select * from producto_platillos select * from producto_platillos 32
+select * from clientes where dni = 4654 select * from clientes where dni = 4654 39
+insert into clientes (dni,nombre,apellido) values (4654,'fdsg','fvfe') insert into clientes (dni,nombre,apellido) values (4654,'fdsg','fvfe') 70
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+select * from producto_platillos where id = 3 select * from producto_platillos where id = 3 45
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from clientes where dni = 357654 select * from clientes where dni = 357654 41
+insert into clientes (dni,nombre,apellido) values (357654,'hgfd','hgf') insert into clientes (dni,nombre,apellido) values (357654,'hgfd','hgf') 71
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+select * from producto_platillos where id = 3 select * from producto_platillos where id = 3 45
+insert into detalle_pedidos (id , informacion) values (18446744072735726496,'[{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":1},{"producto":{"id":3,"nombre":"parrilla","costo":35},"cantidad":4}]') insert into detalle_pedidos (id , informacion) values (18446744072735726496,'[{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":1},{"producto":{"id":3,"nombre":"parrilla","costo":35},"cantidad":4}]') 217
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (18446744072735726496,76608992,357654,'gvfcdx',0) insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (18446744072735726496,76608992,357654,'gvfcdx',0) 138
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+update reparto_pedidos set direccion = 'gvfcdx' , estado = 1 where id_pedido = 18446744072735726496 update reparto_pedidos set direccion = 'gvfcdx' , estado = 1 where id_pedido = 18446744072735726496 99
+insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (18446744072735726496,357654,18446744072736084150,152.6) insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (18446744072735726496,357654,18446744072736084150,152.6) 123
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+update reparto_pedidos set direccion = 'gvfcdx' , estado = 2 where id_pedido = 18446744072735726496 update reparto_pedidos set direccion = 'gvfcdx' , estado = 2 where id_pedido = 18446744072735726496 99
+select estado from reparto_pedidos where id_pedido = 18446744072735726496 select estado from reparto_pedidos where id_pedido = 18446744072735726496 73
+select * from producto_platillos select * from producto_platillos 32
+select * from clientes where dni = 76543 select * from clientes where dni = 76543 40
+insert into clientes (dni,nombre,apellido) values (76543,'gfds','fd') insert into clientes (dni,nombre,apellido) values (76543,'gfds','fd') 69
+select * from producto_platillos select * from producto_platillos 32
+select * from clientes where dni = 6543 select * from clientes where dni = 6543 39
+insert into clientes (dni,nombre,apellido) values (6543,'Angel','Zuñiga') insert into clientes (dni,nombre,apellido) values (6543,'Angel','Zuñiga') 74
+select * from producto_platillos where id = 1 select * from producto_platillos where id = 1 45
+select * from producto_platillos where id = 1 select * from producto_platillos where id = 1 45
+select * from producto_platillos where id = 2 select * from producto_platillos where id = 2 45
+select * from producto_platillos where id = 3 select * from producto_platillos where id = 3 45
+insert into detalle_pedidos (id , informacion) values (255050280,'[{"producto":{"id":1,"nombre":"pollo","costo":20},"cantidad":1},{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":2},{"producto":{"id":3,"nombre":"parrilla","costo":35},"cantidad":1}]') insert into detalle_pedidos (id , informacion) values (255050280,'[{"producto":{"id":1,"nombre":"pollo","costo":20},"cantidad":1},{"producto":{"id":2,"nombre":"hamburguesa","costo":12.6},"cantidad":2},{"producto":{"id":3,"nombre":"parrilla","costo":35},"cantidad":1}]') 269
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (255050280,76608998,6543,'0',0) insert into reparto_pedidos (id_pedido,id_repartidor,id_cliente,direccion,estado) values (255050280,76608998,6543,'0',0) 120
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+update reparto_pedidos set direccion = '0' , estado = 1 where id_pedido = 255050280 update reparto_pedidos set direccion = '0' , estado = 1 where id_pedido = 255050280 83
+insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (255050280,6543,255056823,80.2) insert into factura_pedidos (id_pedido,id_cliente,id,monto) values (255050280,6543,255056823,80.2) 98
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+select estado from reparto_pedidos where id_pedido = 255050280 select estado from reparto_pedidos where id_pedido = 255050280 62
+update reparto_pedidos set direccion = '0' , estado = 2 where id_pedido = 255050280 update reparto_pedidos set direccion = '0' , estado = 2 where id_pedido = 255050280 83
