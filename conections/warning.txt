@@ -29134,3 +29134,100 @@ select * from producto_platillos select * from producto_platillos 32
 select * from clientes where dni = 76608998 select * from clientes where dni = 76608998 43
 update clientes set nombre = '',apellido = '' where dni = 76608998 update clientes set nombre = '',apellido = '' where dni = 76608998 66
 select * from producto_platillos select * from producto_platillos 32
+SELECT COUNT(*) FROM detalle_pedidos WHERE true SELECT COUNT(*) FROM detalle_pedidos WHERE true 47
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by monto select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by monto 154
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by f1.monto select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by f1.monto 157
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by f1.id_pedido select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by f1.id_pedido 161
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido 161
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido select r1.id_pedido , f1.monto from reparto_pedidos as r1 join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido 155
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 group by r1.id_pedido 161
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_pedidos WHERE true 47
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_pedidos WHERE true 47
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_pedidos WHERE true 47
+select count(*) , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 group by monto select count(*) , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 group by monto 150
+SELECT COUNT(*) FROM detalle_pedidos WHERE true SELECT COUNT(*) FROM detalle_pedidos WHERE true 47
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 2 139
+select * from detalle_pedidos where id = 18446744072344718464 select * from detalle_pedidos where id = 18446744072344718464 61
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select * from producto_platillos select * from producto_platillos 32
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 139
+select * from clientes where dni = 76608998 select * from clientes where dni = 76608998 43
+update clientes set nombre = '',apellido = '' where dni = 76608998 update clientes set nombre = '',apellido = '' where dni = 76608998 66
+select /* from producto_platillos select /* from producto_platillos 33
+SELECT COUNT(*) FROM detalle_pedidos WHERE true SELECT COUNT(*) FROM detalle_pedidos WHERE true 47
+select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 select r1.id_pedido , f1.monto from reparto_pedidos as r1 inner join factura_pedidos as f1 on f1.id_pedido = r1.id_pedido and r1.estado = 3 139
+SELECT COUNT(*) FROM reparto_pedidos WHERE true SELECT COUNT(*) FROM reparto_pedidos WHERE true 47
+select * from clientes where dni = 76608998 select * from clientes where dni = 76608998 43
+update clientes set nombre = '',apellido = '' where dni = 76608998 update clientes set nombre = '',apellido = '' where dni = 76608998 66
+select * from producto_platillos select * from producto_platillos 32

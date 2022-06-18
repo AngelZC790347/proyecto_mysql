@@ -7,7 +7,7 @@ namespace controllers{
     {
         public ulong id{get;}
         
-        public List<Pedido> pedidos;
+        public List<Pedido> pedidos{get;set;}
 
         public DetallePedidosController(){
             this.id = (ulong)HashCode.Combine(TimeOnly.FromDateTime(DateTime.Now));

@@ -2,7 +2,7 @@ namespace services
 {
     class DetallePedidosService : RestApiConectorService,IDetallePedidos
     {
-        public DetallePedidosService(): base("detalle_pedidos"){}
+        public  DetallePedidosService(): base("detalle_pedidos"){}
 
         public void insertarRegistroPedido(ulong id, string infoJsonFormat)
         {

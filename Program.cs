@@ -1,18 +1,31 @@
 ﻿using controllers;
+using models;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System;
+using System.Globalization;
  using services;
+using System.Text.Json;
+
 namespace proyecto_final
 {
     class Program
     {
         static string nombre, apellido;
         static uint dni = 76608998;
+        
         public static void Main()
         {
             byte op = 0;
+            try
+            {
+                
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
             do
             {
                 System.Console.Write("\tMenu\n0 . Salir \n1 . Cliente\n2 . Admin\nop : ");
@@ -27,8 +40,8 @@ namespace proyecto_final
                         break;
                     }else{ 
                         if(op == 2){
-                            menuAdmin();
-                            break;
+                        menuAdmin();
+                        break;
                         }else{
                             System.Console.WriteLine("Opcion no valida presione una tecla para continuar");
                         }   
@@ -43,7 +56,7 @@ namespace proyecto_final
             {   
                 Console.Clear();
                 System.Console.WriteLine("\tMenu de Administrador\n".ToUpper());
-                System.Console.Write("0 . salirR\n1 .Total de pedidos recibidos \n2 . Porcentaje de pedidos entregados y su total en dinero acumulado\n3 .Porcentaje de pedidos cancelados y su total en dinero acumulado\n4 .Pedidos entregados según plato \n5 . Pedidos cancelados según plato\nOP-> ");
+                System.Console.Write("0 . salirR\n1 .Total de pedidos recibidos \n2 . Porcentaje de pedidos entregados y su total en dinero acumulado\n3 .Porcentaje de pedidos cancelados y su total en dinero acumulado\n4 .Pedidos entregados según plato \n5 . Pedidos cancelados según plato\n\nOP-> ");
                 op3 = byte.Parse(Console.ReadLine());
                 if (op3 == 0)
                 {
@@ -53,22 +66,39 @@ namespace proyecto_final
                    System.Console.WriteLine("Total de Pedidos del dia: " +new DetallePedidosService().contarRegistros());
                 }else if(op3 == 2)
                 {
-                    RepartoPedidosService r1=new RepartoPedidosService();
-                    FacturaService f1 = new FacturaService();
-                    string result=r1.dispatchQuery($"select count(*) , f1.monto from {r1.table_name} as r1 inner join {f1.table_name} as f1 on f1.id_pedido = r1.id_pedido and r1.estado = {(byte)ESTADOS_REPARTO.ENTREGADO} group by monto");
-                    System.Console.WriteLine("\tPEEDIDOS ENTREGADOS\n"+result);                 
+                    
+                    System.Console.WriteLine("\tPEEDIDOS ENTREGADOS\n");
+                    float sum = 0;
+                    var listaRes=obtenerEntregados();
+                    listaRes.All((v)=>{sum+=v.Value;return true;});
+                    System.Console.WriteLine("Porcentaje de pedidos: "+listaRes.Count*100/new RepartoPedidosService().contarRegistros());
+                    System.Console.WriteLine("Total de Dinero Acumulado: "+sum);
                 }else if(op3 == 3)
                 {
-                    RepartoPedidosService r1=new RepartoPedidosService();
-                    FacturaService f1 = new FacturaService();
-                    string result =r1.dispatchQuery($"select count(*) , f1.monto from {r1.table_name} as r1 inner join {f1.table_name} as f1 on f1.id_pedido = r1.id_pedido and r1.estado = {(byte)ESTADOS_REPARTO.CANCELADO} group by monto");
-                    System.Console.WriteLine("\tPedidos Cancelados \n".ToUpper()+result);                 
+                    float sum = 0;
+                    var listaRes=obtenerCancelados();
+                    System.Console.WriteLine("\tPEEDIDOS CANCELADO\n");
+                    System.Console.WriteLine("Porcentaje de pedidos: "+listaRes.Count*100/new RepartoPedidosService().contarRegistros());
+                    System.Console.WriteLine("Total de Dinero Acumulado: "+sum);
                 }else if(op3 == 4)
                 {
-                    // ProductoPlatillosService p1 = new ProductoPlatillosService();
-                    // RepartidoresService r1=new RepartidoresService();
-                    // r1.dispatchQuery($"selecto ");
+                   List<ProductoPlatillos> pp=ProductoPlatillosController.obtenerMenu();
+                    
+                    var pE=mappingEntregados(pp);
+                    foreach (var item in pE)
+                    {
+                        System.Console.WriteLine("Cantidad de Productos  Entregados por categoria");
+                        System.Console.WriteLine($"{item.Key} : {item.Value}");
+                    }
                     break;
+                }else if(op3 == 5){
+                    List<ProductoPlatillos> pp=ProductoPlatillosController.obtenerMenu();
+                    var pc = mappingCancelados(pp);
+                    foreach (var item in pc)
+                    {
+                        System.Console.WriteLine("Cantidad de Productos  Cancelados por categoria");
+                        System.Console.WriteLine($"{item.Key} : {item.Value}");
+                    }
                 }
                 System.Console.WriteLine("Presiones un  tecla para conmtinuar");
                 Console.ReadKey();
@@ -78,8 +108,7 @@ namespace proyecto_final
         {   
             Console.Clear();
             ClienteController actualCliente = new ClienteController(dni, nombre, apellido);
-            //string menu =actualCliente.solicitarMenu(); Esta funcionalidad esta fallando
-            string menu =new RestApiConectorService("producto_platillos").dispatchQuery("select * from producto_platillos");
+            string menu =actualCliente.solicitarMenu();
             try
             {
                     System.Console.WriteLine($"\tMenu de Cliente {nombre} {apellido}\n");
@@ -216,6 +245,71 @@ namespace proyecto_final
         //     Console.ReadLine();
 
         // }
-
+        private static Dictionary<ulong,float> obtenerEntregados(){
+            var res = new Dictionary<ulong,float>();
+            RepartoPedidosService r1=new RepartoPedidosService();
+            FacturaService f1 = new FacturaService();
+            string result= r1.dispatchQuery($"select r1.id_pedido , f1.monto from {r1.table_name} as r1 inner join {f1.table_name} as f1 on f1.id_pedido = r1.id_pedido and r1.estado = {(byte)ESTADOS_REPARTO.ENTREGADO}");
+            var  r =result.Split('\n').ToList();
+            r.Remove(r[r.Count-1]);
+            r.ForEach((c)=>{
+                var res2 = c.Split(' ').ToArray();
+                res.Add(ulong.Parse(res2[0]),float.Parse(res2[1]));
+            });
+            return res;
+        }
+        private static Dictionary<ulong,float> obtenerCancelados(){
+            var res = new Dictionary<ulong,float>();
+            RepartoPedidosService r1=new RepartoPedidosService();
+            FacturaService f1 = new FacturaService();
+            string result= r1.dispatchQuery($"select r1.id_pedido , f1.monto from {r1.table_name} as r1 inner join {f1.table_name} as f1 on f1.id_pedido = r1.id_pedido and r1.estado = {(byte)ESTADOS_REPARTO.CANCELADO}");
+             var  r =result.Split('\n').ToList();
+            r.Remove(r[r.Count-1]);
+            r.ForEach((c)=>{
+                var res2 = c.Split(' ').ToArray();
+                res.Add(ulong.Parse(res2[0]),float.Parse(res2[1]));
+            });
+             return res;
+        }
+        private static Dictionary<string,int> mappingEntregados(List<ProductoPlatillos>pp){
+            var res = new Dictionary<string,int>();
+            var listaRes=obtenerEntregados();
+            Pedido[] ap = new Pedido[listaRes.Count];
+            string [] dp =new String[listaRes.Count];
+            var pS=new DetallePedidosService();
+            pp.ForEach((p)=>res.Add(p.nombre,0));
+            foreach (var item in listaRes)
+            {
+                string msg = "";
+                var json=pS.obtenerEntidadPorId(item.Key).Split(' ');
+                for (int i = 1; i < json.Count(); i++)
+                {
+                    msg+=json[i];
+                }
+                var pedidos=JsonSerializer.Deserialize<List<Pedido>>(msg);
+                pedidos.ForEach((v)=>res[v.producto.nombre]+=v.cantidad);
+            } 
+            return res;
+        }
+         private static Dictionary<string,int> mappingCancelados(List<ProductoPlatillos>pp){
+            var res = new Dictionary<string,int>();
+            var listaRes=obtenerCancelados();
+            Pedido[] ap = new Pedido[listaRes.Count];
+            string [] dp =new String[listaRes.Count];
+            var pS=new DetallePedidosService();
+            pp.ForEach((p)=>res.Add(p.nombre,0));
+            foreach (var item in listaRes)
+            {
+                string msg = "";
+                var json=pS.obtenerEntidadPorId(item.Key).Split(' ');
+                for (int i = 1; i < json.Count(); i++)
+                {
+                    msg+=json[i];
+                }
+                var pedidos=JsonSerializer.Deserialize<List<Pedido>>(msg);
+                pedidos.ForEach((v)=>res[v.producto.nombre]+=v.cantidad);
+            } 
+            return res;
+        }
     }
 }
